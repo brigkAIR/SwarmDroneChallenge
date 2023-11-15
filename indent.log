@@ -1,0 +1,22 @@
+Wed Nov 15 19:22:30 2023
+latexindent version 2.2, a script to indent .tex files
+latexindent lives here: /usr/share/texlive/texmf-dist/scripts/latexindent/
+
+YAML files:
+	Reading defaultSettings.yaml from /usr/share/texlive/texmf-dist/scripts/latexindent/defaultSettings.yaml
+
+	Home directory is /root
+	To specify user settings you would put indentconfig.yaml here: 
+	/root/indentconfig.yaml
+
+	Alternatively, you can use the hidden file .indentconfig.yaml as: 
+	/root/.indentconfig.yaml
+
+Just out put to the terminal :)
+
+Line Count of /workspaces/Sporting-Regulations/pages/__latexindent_temp_content.tex: 55
+Line Count of indented /workspaces/Sporting-Regulations/pages/__latexindent_temp_content.tex: 55
+
+Line counts of original file and indented file match.
+
+--------------
