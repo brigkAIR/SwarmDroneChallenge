@@ -11,7 +11,7 @@ jobs:
       - name: Compile LaTeX document
         uses: xu-cheng/latex-action@master
         with:
-          root_file: sporting_regulations.tex
+          root_file: sdc_regulations.tex
           extra_system_packages: inkscape
           latexmk_shell_escape: true
 
@@ -29,5 +29,5 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: rulebook
-          path: sporting_regulations.pdf
+          path: sdc_regulations.pdf
           retention-days: 14
