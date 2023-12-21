@@ -36,7 +36,7 @@ Now you'll find a run button at the top that you can use to build the latex pdf 
  ```
 ### 7. Create Pull Request to BrigkAir Repository
 
-
+Create a Pull Request to merge the changes in your forked repository with the brigkAir repository.
 
 ## Releases
-As 
+As soon as a version is ready for release it will be published under [releases](https://github.com/brigkAir/SwarmDroneChallenge/releases)
