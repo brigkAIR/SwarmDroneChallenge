@@ -6,4 +6,4 @@ This Repository is equipped with a github action, that builds the tex files and 
 The Github action is triggered on each push or pull request on the main branch.
 
 ## Contribution
-If you are a temmember feel free to open issues for if you have questions or fork this repository and create a pull request with your proposed rule changes.    
+If you are a participant feel free to open issues to discuss questions or fork this repository and create a pull request with your proposed rule changes.

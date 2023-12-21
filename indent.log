@@ -1,22 +1,28 @@
-Wed Nov 15 19:22:30 2023
-latexindent version 2.2, a script to indent .tex files
-latexindent lives here: /usr/share/texlive/texmf-dist/scripts/latexindent/
-
-YAML files:
-	Reading defaultSettings.yaml from /usr/share/texlive/texmf-dist/scripts/latexindent/defaultSettings.yaml
-
-	Home directory is /root
-	To specify user settings you would put indentconfig.yaml here: 
-	/root/indentconfig.yaml
-
-	Alternatively, you can use the hidden file .indentconfig.yaml as: 
-	/root/.indentconfig.yaml
-
-Just out put to the terminal :)
-
-Line Count of /workspaces/Sporting-Regulations/pages/__latexindent_temp_content.tex: 55
-Line Count of indented /workspaces/Sporting-Regulations/pages/__latexindent_temp_content.tex: 55
-
-Line counts of original file and indented file match.
-
---------------
+INFO:  latexindent version 3.23.3, 2023-10-13, a script to indent .tex files
+       latexindent lives here: /usr/local/texlive/2023/texmf-dist/scripts/latexindent/
+       Thu Dec 21 12:27:57 2023
+       Filename: /workspace/pages/__latexindent_temp_competition_outline.tex
+INFO:  Processing switches:
+       -y|--yaml: YAML settings specified via command line
+       -c|--cruft: cruft directory
+INFO:  Directory for backup files and /workspace//indent.log:
+       /workspace/
+INFO:  YAML settings read: defaultSettings.yaml
+       Reading defaultSettings.yaml from /usr/local/texlive/2023/texmf-dist/scripts/latexindent/defaultSettings.yaml
+INFO:  YAML reading settings
+       Home directory is /root
+       latexindent.pl didn't find indentconfig.yaml or .indentconfig.yaml
+       see all possible locations: https://latexindentpl.readthedocs.io/en/latest/sec-appendices.html#indentconfig-options)
+INFO:  YAML settings read: -y switch
+       YAML setting: defaultIndent:'\t'
+       single-quoted string found in -y switch: '\t', substitute to 	
+       Updating mainSettings with defaultIndent: 	
+INFO:  Phase 1: searching for objects
+INFO:  Phase 2: finding surrounding indentation
+INFO:  Phase 3: indenting objects
+INFO:  Phase 4: final indentation check
+INFO:  Output routine:
+       Not outputting to file; see -w and -o switches for more options.
+       --------------
+INFO:  Please direct all communication/issues to:
+        https://github.com/cmhughes/latexindent.pl
