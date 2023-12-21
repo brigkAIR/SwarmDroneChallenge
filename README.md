@@ -7,8 +7,8 @@ The file `technical.tex` contains all rules regarding the technical implementati
 
 ## Getting Started
 To edit this document you can use any latex editor of your choice.
-If you are using VS Code and have docker and docker-compose installed on your system you can simply use the devcontainer configuration that comes with this repository. 
-The dev container contains the latex installation with all the dependencies you need. 
+If you are using VS Code and have [Docker Desktop](https://docs.docker.com/get-docker/) installed you can simply use the [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) plugin.  
+This repository comes with a dev container configuration that contains the latex installation with all the dependencies you need. 
 Simply open this repository in VS Code
 1. Press at the green button in the left bottom corner 
 ![](https://code.visualstudio.com/assets/docs/devcontainers/containers/remote-dev-status-bar.png)
