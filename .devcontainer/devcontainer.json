@@ -1,8 +1,12 @@
 {
-    "name": "project-dev",
-    "dockerComposeFile": ["docker-compose.yml"],
+    "name": "latex",
+    "dockerComposeFile": [
+        "docker-compose.yml"
+    ],
     "service": "vscode",
-    "runServices": ["vscode"],
+    "runServices": [
+        "vscode"
+    ],
     "shutdownAction": "stopCompose",
     "workspaceFolder": "/workspace",
     "postCreateCommand": "",
