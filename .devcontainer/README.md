@@ -50,21 +50,3 @@ You can customize **settings** and **extensions** in the [devcontainer.json](dev
 
 You can bind mount a shell script to `/home/vscode/.welcome.sh` to replace the [current welcome script](shell/.welcome.sh).
 
-### Publish a port
-
-To access a port from your host to your development container, publish a port in [docker-compose.yml](docker-compose.yml). You can also now do it directly with VSCode without restarting the container.
-
-### Run other services
-
-1. Modify [docker-compose.yml](docker-compose.yml) to launch other services at the same time as this development container, such as a test database:
-
-    ```yml
-      database:
-        image: postgres
-        restart: always
-        environment:
-          POSTGRES_PASSWORD: password
-    ```
-
-1. In [devcontainer.json](devcontainer.json), change the line `"runServices": ["vscode"],` to `"runServices": ["vscode", "database"],`.
-1. In the VS code command palette, rebuild the container.

@@ -1,9 +1,20 @@
 # Swarm Drone Challenge Rulebook
 
-This is a Latex template to work on the rulebook for the Swarm Drone Challenge.
+This repository contains a Latex project that contains the rules for the Swarm Drone Challenge. 
+If you are a participant of the swarm drone challenge feel free to open issues to discuss questions or fork this repository and create a pull request with your proposed rule changes.
+The document consists of a main file called  sdc_regulations.tex that references the files  `pages/technical.tex` and `pages/competition_outline.tex`. 
+The file `technical.tex` contains all rules regarding the technical implementation of the drone and the `competition_outline.tex` file contains all the rules regarding the competition itself e.g. Flight Arena, Scoring. 
 
-This Repository is equipped with a github action, that builds the tex files and stores the resulting pdf as an artefact. (You can find them under "Actions" after selecting the most recent job)
-The Github action is triggered on each push or pull request on the main branch.
-
+## Getting Started
+If you are using VS Code and have docker and docker-compose installed on your system you can simply use the devcontainer configuration that comes with this repository. 
+The dev container contains the latex installation with every dependency you need. 
+Simply open this repository in VS Code
+1. Press at the green button in the left buttom corner 
+![](https://code.visualstudio.com/assets/docs/devcontainers/containers/remote-dev-status-bar.png)
+2. Select `Reopen in Container`
+3. Now you'll find a run button at the top that you can use to build the latex pdf.
+![](figures/RunButton.png)
 ## Contribution
-If you are a participant feel free to open issues to discuss questions or fork this repository and create a pull request with your proposed rule changes.
+
+
+## Realeases
