@@ -1,0 +1,109 @@
+\section{Competition Scenario: Monitoring}
+
+\subsection{Trivia}
+We prepared two versions of a story for this task. They are alternative versions: for the competition, the organizers should choose only one.
+
+\subsubsection{Version 1: Inspection}
+
+\paragraph{Emergency Mission Briefing:} Multi-Pipe Oxygen Inspection
+
+\paragraph{Team, urgent situation} there are survivors trapped in a toxic coal mine, relying on oxygen supplies with suspected leaks. Human inspection is too risky. Your mission: simultaneously inspect all joints on each oxygen pipe.
+
+\paragraph{Deployment:} Mobilize drones equipped with advanced sensors to navigate the perilous tunnel and approach each oxygen pipe.
+
+\paragraph{Comprehensive Coverage:} Strategically position drones to cover all joints on each pipe at once. Efficient coordination is crucial. As soon as all joints on a given pipe are covered, we will deploy colorful smoke canisters on that pipe to confirm potential leaks. A distortion in the pattern will reveal compromised joints.
+
+\paragraph{Conservation:} The deployment of colorful smoke canisters should be minimized, as it is not neutral for human health. Efficiently cover all joints simultaneously to maximize the chance of survival.
+
+The survivors' oxygen supply relies on your efficiency. Showcase the prowess of our technology in this critical rescue mission. Go team!
+
+
+\subsubsection{Version 2 (military)}
+
+\paragraph{Covert Mission Briefing:} Tunnel Network Disruption
+
+\paragraph{Team, critical mission:} terrorists' hideout, intel indicates colored doors are gateways to an intricate tunnel network. Your objective: locate these doors and simultaneously destroy those leading to interconnected tunnels.
+
+\paragraph{Infiltration:} Deploy stealth drones equipped with advanced reconnaissance capabilities to infiltrate the hideout.
+
+\paragraph{Identification:} Search for colored doors; intel suggests these doors serve as access points to an underground tunnel network.
+
+\paragraph{Tunnel Mapping:} Focus on understanding the tunnel connections. Doors of the same color likely link to a shared tunnel. Map these connections for strategic targeting.
+
+\paragraph{Simultaneous Destruction:} Once tunnel connections are deciphered, coordinate the simultaneous destruction of doors leading to the same interconnected tunnel system. Precision is paramount.
+
+\paragraph{Communication:} Maintain constant communication to update on tunnel mapping and door locations. Coordination ensures synchronization in disrupting their network.
+
+\paragraph{Stealth:} Execute the mission silently. Surprise and simultaneous strikes will disorient the terrorists.
+
+Success hinges on understanding and disrupting their tunnel network. Showcase the power of synchronized technology. Go team!
+
+
+\subsection{Overview}
+
+In the playing area, there will be multiple types of fiducial markers:
+
+\begin{enumerate}
+    \item Navigation landmarks — distinguished by WHITE background, their location is known a-priori and they are uniformly scattered around the environment. They are supposed to be used as a navigation aid for the participants. They can be printed and permanently attached to the floor.
+
+    \item Points of interest (POIs) – they will have three different backgrounds, RED, GREEN, BLUE and they are to be discovered by the teams, their location should not be known. To achieve that, the markers are going to be displayed on monitors scattered across the area. Each monitor displays one marker. The monitors will not display a static code, but instead a sequence of codes, which will change every 10 seconds. The organizers are the only ones to know the sequence and it is different for each team, so they can validate if the reported marker was seen or not. The background of the marker never changes.
+\end{enumerate}
+
+The goal of the competition is to decode as many codes with the same background at the same time as possible. 
+
+
+The marker IDs are unique (the same ID will not appear in two places, even at different times).
+
+\subsection{Result}
+At the end of a run, a team should report as a result, for each color, a list of IDs of groups of markers that were observed simultaneously. For instance:
+
+\begin{example}
+~
+
+RED: [(1, 5), (2, 3)]
+
+GREEN: []
+
+BLUE: [(8), (4)]
+
+
+This means, that the team managed to decode two red markers (IDs 1 and 5) at the same time and additional two red markers (IDs 2 and 3) also at the same time; they did not decode any green markers and two blue markers, 8 and 2, but not at the same time.
+\end{example}
+
+\subsection{Scoring}
+\paragraph{Step 1 (single-marker correctness filtering):}
+
+First, all incorrectly recognized IDs (i.e., the ID that is never displayed for a given color) should be removed from the result and for each one of them 1 penalty points should be counted.
+
+\paragraph{Step 2 (group association correctness filtering):}
+
+In the second step, we exclude incorrectly reported groups. For each group, if it contains at least one ID that was not displayed at the same time as the other IDs in this group, the group is “broken” and the team gets 1 penalty point.
+
+\paragraph{Step 3 (assigning scores):}
+
+Then, for each marker in the playing field, we find the biggest group that this marker was reported in that is not “broken”, and the team gets the number of points equal to the size of that group. If a marker was reported only in a “broken” group, it provides 1 point.
+
+For instance, assuming the Example 1 above is correct, so steps 1 and 2 don’t modify it. In the third step, we assign points to each marker.
+
+\begin{description}
+    \item[Marker 1] grants 2 points (as it’s in the group of size 2)
+    \item[Marker 2:] 2 points
+    \item[Marker 3:] 2 points
+    \item[Marker 4:] 1 point
+    \item[Marker 5:] 2 points
+    \item[Marker 6, and 7:] 0 points (they were not found)
+    \item[Marker 8:] 1 point.
+\end{description}
+
+In total, this result provides 10 points.
+
+\subsubsection{Technical considerations}
+The markers are $5$x$5$ Aruco markers for all marker types, generated using this generator: \url{https://chev.me/arucogen/}.
+
+
+Size: $50$\,cm x $50$\,cm. 
+
+
+
+
+The scoring system may be implemented as a simple server that will be receiving network requests with reporting codes and will count the team score. Can easily verify correctness and simultaneousness of the reads.
