@@ -1,4 +1,6 @@
 {
+    
+
     "name": "latex",
     "dockerComposeFile": [
         "docker-compose.yml"
@@ -45,3 +47,4 @@
         }
     }
 }
+
