@@ -1,4 +1,4 @@
-FILE := main
+FILE := sdc_regulations.tex
 OUT  := build
 
 .PHONY: pdf
