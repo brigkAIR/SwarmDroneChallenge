@@ -21,3 +21,7 @@
 }
 \setenumerate[1]{label=\thesubsection.\arabic*.}
 \setenumerate[2]{label*=\arabic*.}
+
+\newenvironment{note}
+  {\par\medskip\noindent\begin{minipage}{\linewidth}\begin{tabular}{|p{\dimexpr\linewidth-2\tabcolsep-2\arrayrulewidth\relax}|}\hline\\}
+  {\\\\\hline\end{tabular}\end{minipage}\par\medskip}
