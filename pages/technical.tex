@@ -1,62 +1,53 @@
 \section{Technical Regulations}
 
-\subsection{Innovation Testbed}
-\begin{enumerate}
-	\item{\textcolor{red}{Open Interface Definitions for Hardware: TBD}}
-	\item{\textcolor{red}{Open Interface Definitions for Software: TBD}}
-	\item{\textcolor{red}{Open Interface Definitions for Network: TBD}}
-\end{enumerate}
 
 \subsection{Positioning}
-\begin{enumerate}
-	\item{\textcolor{red}{Marker based positioning system}}
+\begin{itemize}
+	\item Sets of markers of different sizes are positioned in the arena
+	\item Each marker ID is associated with a set of information:
+\begin{itemize}
+	\item Length of the marker side
+	\item X-positioning
+	\item Y-positioning
+	\item Z-positioning
+	\item Roll angle
+	\item Pitch angle
+	\item Yaw angle
+\end{itemize}
 
-\end{enumerate}
+\item This information enables positioning in the arena with a view of a single marker
+\end{itemize}
 
 \subsection{Collision Prevention}
-\begin{enumerate}
-	\item{Each drone must be equipped with a spherical protection case to protect the drone and other drones from damage}
-\end{enumerate}
+\begin{itemize}
+	\item{Each drone is recommended to be equipped with a spherical protection case to protect the drone and other drones from damage}
+\end{itemize}
 
 \subsection{Emergency Shutoff and Kill Switch}
-\begin{enumerate}
-	\item{\textcolor{red}{Each drone must be equipped with a physical or virtual kill switch.}}
-	\item{\textcolor{red}{Activation of the kill switch results in immediate landing or motor Shutoff}}
-	\item{\textcolor{red}{One button to land whole swarm}}
-\end{enumerate}
+\begin{itemize}
+	\item Each drone must be equipped with a physical or virtual kill switch.
+	\item Activation of the kill switch results in immediate landing or motor Shutoff
+	\item One button to land whole swarm
+\end{itemize}
 
-\subsection{Frequencies and communications}
-\begin{enumerate}
-	\item{\textcolor{red}{Rule 1}}
-	\item{\textcolor{red}{Rule 2}}
-	\item{\textcolor{red}{Rule 3}}
-	\item{\textcolor{red}{Rule 4}}
-\end{enumerate}
 
 \subsection{Size and weight limits}
-\begin{enumerate}
+\begin{itemize}
 	\item{Below 25kg per drone}
-	\item{\textcolor{red}{The drone swarm must consist of no more than 5 drones}}
-	\item{The drone swarm must consist of more that 2 drones.}
-\end{enumerate}
+	\item The drone swarm must consist of no more than 5 drones
+	\item The drone swarm must consist of more that 2 drones.
+\end{itemize}
 
 \subsection{Drone identification}
-\begin{enumerate}
-	\item{\textcolor{red}{Each drone must be identifyable for the hoop activation: RFID Tag ? Fiducial Marker? }}
-\end{enumerate}
+\begin{itemize}
+	\item Each drone must be equipped with an RFID marker for identification by the target objects. The markers will be provided by brigkAIR at the event.
+\end{itemize}
 
 \subsection{Ground Control Station}
-\begin{enumerate}
-	\item{It is not required that the computing must be performed soley onboard.}
-	\item{\textcolor{red}{The bahavior of individual drones can be either controlled by a single agent, which is aware of the global state or by one agent per drone.}}
-\end{enumerate}
+\begin{itemize}
+	\item It is not required that the computing must be performed soley onboard.
+	\item The bahavior of individual drones can be either controlled by a single agent, which is aware of the global state or by one agent per drone.
+\end{itemize}
 
 \subsection{Arbiter / Judge}
-An Arbiter System to automate the rule enforcement process.
-\begin{enumerate}
-
-	\item{\textcolor{red}{Function 1 :TBD}}
-	\item{\textcolor{red}{Function 2 :TBD}}
-	\item{\textcolor{red}{Function 3 :TBD}}
-	\item{\textcolor{red}{Function 4 :TBD}}
-\end{enumerate}
+No technical solution is provided by the organizers that collects and/or distributes (real-time) information on positioning, scoring and thus acts as a source of truth or a referee.

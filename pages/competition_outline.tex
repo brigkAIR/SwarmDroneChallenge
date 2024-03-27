@@ -1,63 +1,105 @@
 \section{Competition Outlines}
 
-\subsection{Flight Arena}
-\begin{enumerate}
-	\item{The flight arena will have a size of 6m height, 20m length, and 18m width}
-	\item{The flight arena will be indoors. Expect bad GPS signal and don't soley rely on gps for you state estimation. Details on positioning using fudicial marker are described in the technical section.}
-	\item{The map coordinate frame is a right handed coordnate frame, which is attached to the middle line with the z axis pointing upwards the x axis is pointing to the middle of the field.}
-\end{enumerate}
-\begin{figure}[H]
-	\centering
-	\includegraphics[width=400pt]{SDC_FlightArena.png}
-	\caption{Flight Arena Dimensions}
-	\label{fig:flight_arena}
-\end{figure}
-\subsection{Game Dynamics}
-\begin{enumerate}
-	\item{All drones of one team have to start in their own territory.}
-	\item{\textcolor{red}{Drones need to activate hexagons by flying through them.}}
-	\item{\textcolor{red}{There are 6 hexagons in total. 3 per team.}}
-	\item{\textcolor{red}{The hexagon in the own territory are preactivated in the beginning of each halftime}}
-	\item{\textcolor{red}{The game lasts 10 minutes}}
-	\item{\textcolor{red}{The game is paused after 5 minutes and the sides are swapped.}}
-	\item{\textcolor{red}{The goal is to activate as many hexagons as possible.}}
-\end{enumerate}
+\subsection{Playing Field}
 
-\subsection{Rewards / Scoring}
-\begin{enumerate}
-	\item{\textcolor{red}{A team can earn max 80 points. 60 points can be scored during the game and 20 points are awarded by the jury.}}
-	\item{\textcolor{red}{You can earn 1 point per minute for each hexagon that is activated. (Each second will be counted as 1/60 point)}}
-	\item{\textcolor{red}{The jury will award up to 20 points for the presentation and the technical implementation.}}
-	\item{\textcolor{red}{The team with the most points wins.}}
-\end{enumerate}
+The playing field is a rectangular area with the following dimensions:
+
+\begin{itemize}
+\item Length: 36 meters
+\item Width: 18 meters
+\item Height: 6 meters
+\end{itemize}
+
+
+The playing field is divided into three zones:
+\begin{itemize}
+\item \textbf{Two Team Zones (red and blue):} The home base of each team, where the drones start and land.
+\item \textbf{One Neutral Zone in the middle:} A neutral territory for strategic maneuvers.
+\end{itemize}
+
+
+
+
+\subsection{Target Objects}
+
+\begin{itemize}
+\item \textbf{The goal:} Change the color of the target objects to your team's color (red or blue)!
+\item Each team zone has \textbf{target objects}, for a total of \textbf{6} in the playing field.
+\item These objects change their color based on their interaction with the drones:
+\begin{itemize}
+    \item \textbf{Default state:} Matches the color of the team zone.
+    \item \textbf{Triggered state:} Changes to the color of the drone that
+\end{itemize}
+ approaches and then flies away.
+\end{itemize}
+
+
+
+\subsection{Gameplay}
+
+\begin{itemize}
+\item \textbf{Teams:} 2-5 drones per team, ready to battle!
+\item \textbf{Start:} Each team starts in its designated zone with its drones powered up and ready to go.
+\item \textbf{Action:} Drones fly around the arena, triggering target objects to change color and score points for their team.
+\item \textbf{Scoring:} Each change of a target object's color earns your team 1 point.
+\item \textbf{Time Limit:} The game lasts for a maximum of 10 minutes. The team with the most points at the end wins!
+\end{itemize}
+
+
+\subsection{Special Maneuver: Dominate the Arena!}
+
+\begin{itemize}
+\item \textbf{Unlock the superpower:} When \textbf{all 6 target objects are the same color} (either red or blue), your team can attempt a special maneuver.
+\item \textbf{The challenge:} A drone from your team needs to fly from the enemy zone in your own zone. This drone or another drone has to land in your own zone afterwards.
+\item \textbf{Success!} If all targets remain the same color after this action, your team wins the game instantly!
+\end{itemize}
+
+\subsection{Tournament}
+
+\begin{itemize}
+\item Two teams compete against each other in each match.
+\item Pairings are determined by random draw.
+\item The winner of the tournament is the team that scores the most points in its match. Teams that win the match via a special maneuver are ranked at the top of the leaderboard.
+\item Each team plays only once.
+\item If the number of teams is odd, an opponent team is determined for the remaining team.
+\item Firstly, voluntary opponent teams are sought. If only one voluntary team is available, it is directly nominated. If there are multiple voluntary teams, the decision is made by random draw.
+\item If there are no voluntary teams, a random draw selects an opponent from all teams.
+\item The team selected as the opponent then has two game results, and the better result is considered.
+\end{itemize}
+
+
+\subsection{Winning the Challenge}
+To win the Swarm Drone Challenge, a jury of experts will evaluate the teams' performance in the game as well as their technical approach and the presentation of their work. The winning team is determined by the jury.
 
 \subsection{Teams}
-\begin{enumerate}
+\begin{itemize}
 	\item{Up to 5 team members per team}
 	\item{New team members are allowed to join but need to be registered with brigk.}
-\end{enumerate}
+\end{itemize}
 
 \subsection{Reimbursement}
-\begin{enumerate}
-	\item{\textcolor{red}{Up to 1000€ for drone parts}}
-	\item{\textcolor{red}{Max 5 orders}}
-\end{enumerate}
+\begin{itemize}
+	\item Up to 1000€ for drone parts 
+	\item Max 5 orders 
+	\item Until the final, the hardware remains the property of brigkAIR and is provided to the teams as a permanent loan.
+
+\end{itemize}
 
 \subsection{Penalty and disqualification}
-\begin{enumerate}
-	\item{\textcolor{red}{Leaving the flight arena will be penalized with a deduction of 5 points.}}
-	\item{\textcolor{red}{Starting the motors of the drones before the official start will be penalized with a deduction of 5 points }}
-\end{enumerate}
+\begin{itemize}
+	\item Leaving the flight arena will be penalized with a deduction of 15 points.
+	\item Starting the motors of the drones before the official start will be penalized with a deduction of 5 points 
+\end{itemize}
 
 \subsection{Intellectual property}
-\begin{enumerate}
+\begin{itemize}
 	\item{The IP stayes at the teams}
 	\item{The teams are encouraged to open source their solutions. This can have an effect on the jury voting}
 	\item{The teams are required to prepare a presentation and explain their solution with technical details on the implementation.}
-\end{enumerate}
+\end{itemize}
 
 \subsection{Responsibilities}
-\begin{enumerate}
-	\item{\textcolor{red}{Each team must have a spotter}}
-	\item{\textcolor{red}{Teams are responsible to virtually validate their solution}}
-\end{enumerate}
+\begin{itemize}
+	\item Each team must have a spotter
+	\item Teams are responsible to virtually validate their solution
+\end{itemize}
