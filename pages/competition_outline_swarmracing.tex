@@ -1,0 +1,65 @@
+\section{Competition Outlines}
+
+\subsection{Flight Arena}
+\begin{enumerate}
+	\item{The flight arena will have a size of 6m height, 48m length, and 18m width}
+	\item{The flight arena will be indoors. Expect bad GPS signal and don't soley rely on gps for you state estimation.}
+        \item{A number $L$ of \emph{Localization Aruco Markers} (LOCMARKs) will be placed in the environment, at an heigth that is no higher than $0.5$ m.}
+\end{enumerate}
+
+\subsection{Game Dynamics}
+\begin{enumerate}
+	%\item{All drones of one team have to start in their own territory.}
+        \item{All drones of each team start in the same starting location.}
+        \item{A number $T$ of \emph{Task Aruco Markers} (TASKMARKs) will be placed in the environment, at an heigth that is no more higher $0.5$ m.}
+        \item{The position of the TASKMARKs is randomized at each run of the competition. The task markers are organized in a “chain” (open lap) or in a "circuit" (closed lap). The first TASKMARK is placed within the field of view of the deployment area of the drones. The second TASKMARK is likely to be directly visible once the first TASK MARK is reached, and so on with the third one etc. The last TASKMARK is either close to a separate landing area (open lap), or close to the deployment area and to the first TASKMARK (closed lap).}
+        \item{The drones are obliged to fly at a height that is greater than the max height of the markers (> 0.5 m). In this way, the drones won’t crash against the markers, but they should still see them with a front-facing camera.}
+        \item{The task of the competition is to “race” in a swarm configuration. TASKMARKS should all be visited in order, from the first to the last one. The team is encouraged to use a swarm for this task (at least $2$ drones, max $7$ drones)}
+        \item{Different “tracks” will be designed at leisure. Besides the randomization of the TASKMARKs positions and order, obstacles/walls/corridors could also be placed. One could even have an easy vs medium vs hard track.}
+        \item{Tracks will be classified in easy (e.g. linear or with limited curves, no obstacles), medium (with more curves but no obstacles) and hard (with curves and obstacles) }
+        \item{Beacons (e.g. based on Infra red or other hardware) will be placed next to the TASKMARK to detect how many drones pass through the TASKMARK and logging the time $T_l$ of each traversal. }
+	%\item{\textcolor{red}{The drones can activate switches to label a flag as stolen by scanning a fiducial marker.}}
+\end{enumerate}
+
+\subsection{Teams}
+\begin{enumerate}
+	\item{Up to 5 team member per team}
+	\item{New team member are allowed to join but need to be registered with brigk.}
+\end{enumerate}
+
+\subsection{Reimbursement}
+\begin{enumerate}
+	\item{\textcolor{red}{Up to 1000€ for drone parts}}
+	\item{\textcolor{red}{Max 5 orders}}
+\end{enumerate}
+
+\subsection{Rewards / Scoring}
+\begin{enumerate}
+	\item{\textcolor{red}{Rule 1} The main scoring formula is $S = K \frac{1}{\sum_{i=1}^{T} T_L }$, where $T_L$ represents the completion time of each lap, and $K$ is a constant factor that can be used to determine the scale of the score (for example $K=100$). The decision on the value of $K$ will depend on the score resolution that one wants to use.}
+	\item{\textcolor{red}{Rule 2} For each TASKMARK $m$ missed, the corresponding $T_m$ will be set to $T_m = \frac{1}{T} K$. If all TASKMARKs are missed, this will corresopnd to a low score of $1$ point.}
+	\item{\textcolor{red}{Rule 3}} The first drone that passes a TASKMARK will contribute to the score. Each subsequent drone that passes the TASKMARK will contribute to the score only if it passes not later than $0.5$ s with respect to the previous drone. This will effectively reward "swarm racing" in coordination rather than individual drones racing on their own.
+        \item{\textcolor{red}{Rule 3a}} A softer version of Rule 3 that penalizes non coordinating drones in a gracefully decaying way. The first drone that passes a TASKMARK will contribute to the score fully. Each subsequent drone that passes the TASKMARK will contribute to the score as $K \frac{1}{t_g} \frac{1}{\sum_{i=1}^{T} T_L }$, where $t_g$ is the offset in time between the passage of two consecutive drones (first vs second, second vs third, etc).  This will effectively encourage "swarm racing" while still giving some extra scores to team that race with multiple drones but not exactly in coordination.
+	\item{\textcolor{red}{Remark}} The parameters of the above scoring formula can be tuned if a different prioritization between swarm size and racing speed is desired.
+\end{enumerate}
+
+\subsection{Penalty and disqualification}
+\begin{enumerate}
+	\item{\textcolor{red}{Rule 1} If no drone takes off after $10$ minutes the team is disqualified.}
+	\item{\textcolor{red}{Rule 2} If the drones fly at a height that is $< 0.5$ m, a penalty of $0.1 K$ points is applied (e.g. if $K=100$, the penalty will be of $10$ points). If this happens for $3$ times, the team is disqualified. }
+	\item{\textcolor{red}{Rule 3} If the drones crash, a penalty of $0.1 K$ points is applied (e.g. if $K=100$, the penalty will be of $10$ points). If this happens for $3$ times, the team is disqualified. }
+	\item{\textcolor{red}{Rule 4}} If the system used by the team relies on other localization systems other than LOCMARKs, then a penalty of $0.2 K$ is applied for each extra infrastructure being used.
+\end{enumerate}
+
+\subsection{Interlectual property}
+\begin{enumerate}
+	\item{The IP stayes at the teams}
+	\item{The teams are encouraged to open source their solutions}
+	\item{The teams are required to prepare a presentation and explain their solution with technical details on the implementation.}
+\end{enumerate}
+
+\subsection{Responsibilities}
+\begin{enumerate}
+	\item{\textcolor{red}{Each team must have a spotter}}
+	\item{\textcolor{red}{in case of a collision: Who is reponsible? }}
+
+\end{enumerate}
