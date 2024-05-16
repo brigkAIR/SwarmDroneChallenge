@@ -5,32 +5,49 @@
 The playing field is a rectangular area with the following dimensions:
 
 \begin{itemize}
-\item Length: 36 meters
-\item Width: 18 meters
-\item Height: 6 meters
+	\item Length: 36 meters
+	\item Width: 18 meters
+	\item Height: 6 meters
 \end{itemize}
 
 
 The playing field is divided into three zones:
 \begin{itemize}
-\item \textbf{Two Team Zones (red and blue):} The home base of each team, where the drones start and land.
-\item \textbf{One Neutral Zone in the middle:} A neutral territory for strategic maneuvers.
+	\item \textbf{Two Team Zones (red and blue):} The home base of each team, where the drones start and land.
+	\item \textbf{One Neutral Zone in the middle:} A neutral territory for strategic maneuvers.
 \end{itemize}
 
+The field layout is illustrated in the figure below:
 
+\input{figures/FieldSize.tikz}
 
+The sizes shown in the graphic are approximate values. The exact dimensions may vary slightly.
 
+\subsection{Indoor Positioning System}
+
+The challenge will take place in a hangar at the Manching Airport (48°43'21.7"N 11°33'04.9"E).
+To imporve the state estimation in a potential gps denied environment, a camera based positioning system using ArUco marker can be used.
+Two ArUco marker are attached to each pillar in the hangar.
+The figure below illustrates the IDs of the maker that are attached to the pillars, where the lower ArUco marker is mounted at a height of 2m and the upper marker at 4m.
+
+\input{figures/FieldIDs.tikz}
+
+None of the hangers walls are aligned to the north or the east direction.
+To simlify the positioning system an additional marker with the ID 0 is placed at the back wall in the center of the field.
+This 0 marker can be used to attach the local world coordinate system to it.
+The orientation of the marker is shown in figure \ref{fig:marker_zero}
+\input{figures/marker0.tikz}
 \subsection{Target Objects}
 
 \begin{itemize}
-\item \textbf{The goal:} Change the color of the target objects to your team's color (red or blue)!
-\item Each team zone has \textbf{target objects}, for a total of \textbf{6} in the playing field.
-\item These objects change their color based on their interaction with the drones:
-\begin{itemize}
-    \item \textbf{Default state:} Matches the color of the team zone.
-    \item \textbf{Triggered state:} Changes to the color of the drone that
-\end{itemize}
- approaches and then flies away.
+	\item \textbf{The goal:} Change the color of the target objects to your team's color (red or blue)!
+	\item Each team zone has \textbf{target objects}, for a total of \textbf{6} in the playing field.
+	\item These objects change their color based on their interaction with the drones:
+	      \begin{itemize}
+		      \item \textbf{Default state:} Matches the color of the team zone.
+		      \item \textbf{Triggered state:} Changes to the color of the drone that
+	      \end{itemize}
+	      approaches and then flies away.
 \end{itemize}
 
 
@@ -38,33 +55,33 @@ The playing field is divided into three zones:
 \subsection{Gameplay}
 
 \begin{itemize}
-\item \textbf{Teams:} 2-5 drones per team, ready to battle!
-\item \textbf{Start:} Each team starts in its designated zone with its drones powered up and ready to go.
-\item \textbf{Action:} Drones fly around the arena, triggering target objects to change color and score points for their team.
-\item \textbf{Scoring:} Each change of a target object's color earns your team 1 point.
-\item \textbf{Time Limit:} The game lasts for a maximum of 10 minutes. The team with the most points at the end wins!
+	\item \textbf{Teams:} 2-5 drones per team, ready to battle!
+	\item \textbf{Start:} Each team starts in its designated zone with its drones powered up and ready to go.
+	\item \textbf{Action:} Drones fly around the arena, triggering target objects to change color and score points for their team.
+	\item \textbf{Scoring:} Each change of a target object's color earns your team 1 point.
+	\item \textbf{Time Limit:} The game lasts for a maximum of 10 minutes. The team with the most points at the end wins!
 \end{itemize}
 
 
 \subsection{Special Maneuver: Dominate the Arena!}
 
 \begin{itemize}
-\item \textbf{Unlock the superpower:} When \textbf{all 6 target objects are the same color} (either red or blue), your team can attempt a special maneuver.
-\item \textbf{The challenge:} A drone from your team needs to fly from the enemy zone in your own zone. This drone or another drone has to land in your own zone afterwards.
-\item \textbf{Success!} If all targets remain the same color after this action, your team wins the game instantly!
+	\item \textbf{Unlock the superpower:} When \textbf{all 6 target objects are the same color} (either red or blue), your team can attempt a special maneuver.
+	\item \textbf{The challenge:} A drone from your team needs to fly from the enemy zone in your own zone. This drone or another drone has to land in your own zone afterwards.
+	\item \textbf{Success!} If all targets remain the same color after this action, your team wins the game instantly!
 \end{itemize}
 
 \subsection{Tournament}
 
 \begin{itemize}
-\item Two teams compete against each other in each match.
-\item Pairings are determined by random draw.
-\item The winner of the tournament is the team that scores the most points in its match. Teams that win the match via a special maneuver are ranked at the top of the leaderboard.
-\item Each team plays only once.
-\item If the number of teams is odd, an opponent team is determined for the remaining team.
-\item Firstly, voluntary opponent teams are sought. If only one voluntary team is available, it is directly nominated. If there are multiple voluntary teams, the decision is made by random draw.
-\item If there are no voluntary teams, a random draw selects an opponent from all teams.
-\item The team selected as the opponent then has two game results, and the better result is considered.
+	\item Two teams compete against each other in each match.
+	\item Pairings are determined by random draw.
+	\item The winner of the tournament is the team that scores the most points in its match. Teams that win the match via a special maneuver are ranked at the top of the leaderboard.
+	\item Each team plays only once.
+	\item If the number of teams is odd, an opponent team is determined for the remaining team.
+	\item Firstly, voluntary opponent teams are sought. If only one voluntary team is available, it is directly nominated. If there are multiple voluntary teams, the decision is made by random draw.
+	\item If there are no voluntary teams, a random draw selects an opponent from all teams.
+	\item The team selected as the opponent then has two game results, and the better result is considered.
 \end{itemize}
 
 
@@ -79,8 +96,8 @@ To win the Swarm Drone Challenge, a jury of experts will evaluate the teams' per
 
 \subsection{Reimbursement}
 \begin{itemize}
-	\item Up to 1000€ for drone parts 
-	\item Max 5 orders 
+	\item Up to 1000€ for drone parts
+	\item Max 5 orders
 	\item Until the final, the hardware remains the property of brigkAIR and is provided to the teams as a permanent loan.
 
 \end{itemize}
@@ -88,7 +105,7 @@ To win the Swarm Drone Challenge, a jury of experts will evaluate the teams' per
 \subsection{Penalty and disqualification}
 \begin{itemize}
 	\item Leaving the flight arena will be penalized with a deduction of 15 points.
-	\item Starting the motors of the drones before the official start will be penalized with a deduction of 5 points 
+	\item Starting the motors of the drones before the official start will be penalized with a deduction of 5 points
 \end{itemize}
 
 \subsection{Intellectual property}

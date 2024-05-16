@@ -1,0 +1,28 @@
+\begin{figure}[H]
+\centering
+
+
+
+\tikzset{every picture/.style={line width=0.75pt}} %set default line width to 0.75pt        
+
+\begin{tikzpicture}[x=0.75pt,y=0.75pt,yscale=-1,xscale=1]
+%uncomment if require: \path (0,300); %set diagram left start at 0, and has height of 300
+
+%Image [id:dp02047036353524767] 
+\draw (322.09,162.91) node  {\includegraphics[width=72.14pt,height=72.14pt]{marker0.png}};
+%Straight Lines [id:da25038894875882] 
+\draw [color={rgb, 255:red, 253; green, 1; blue, 1 }  ,draw opacity=1 ][line width=3]    (321,162) -- (424.67,162) ;
+\draw [shift={(429.67,162)}, rotate = 180] [color={rgb, 255:red, 253; green, 1; blue, 1 }  ,draw opacity=1 ][line width=3]    (20.77,-6.25) .. controls (13.2,-2.65) and (6.28,-0.57) .. (0,0) .. controls (6.28,0.57) and (13.2,2.66) .. (20.77,6.25)   ;
+%Straight Lines [id:da4738627629801915] 
+\draw [color={rgb, 255:red, 0; green, 255; blue, 0 }  ,draw opacity=1 ][line width=3]    (321,162) -- (321,54.67) ;
+\draw [shift={(321,49.67)}, rotate = 90] [color={rgb, 255:red, 0; green, 255; blue, 0 }  ,draw opacity=1 ][line width=3]    (20.77,-6.25) .. controls (13.2,-2.65) and (6.28,-0.57) .. (0,0) .. controls (6.28,0.57) and (13.2,2.66) .. (20.77,6.25)   ;
+
+% Text Node
+\draw (316,210) node [anchor=north west][inner sep=0.75pt]   [align=left] {0};
+
+
+\end{tikzpicture}
+
+\caption{Zero marker for the local coordinate frame}
+\label{fig:marker_zero}
+\end{figure}
