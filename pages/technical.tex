@@ -2,18 +2,20 @@
 
 
 \subsection{Positioning}
-\begin{itemize}
-	\item Sets of markers of different sizes are positioned in the arena
-	\item Each marker ID is associated with a set of information:
-\begin{itemize}
-	\item Length of the marker side
-	\item X-positioning
-	\item Y-positioning
-	\item Z-positioning
-	\item Roll angle
-	\item Pitch angle
-	\item Yaw angle
-\end{itemize}
+The challenge will take place in a hangar at the Manching Airport (48°43'21.7"N 11°33'04.9"E).
+To imporve the state estimation in a potential gps denied environment, a camera based positioning system using ArUco marker can be used.
+Two ArUco marker are attached to each pillar in the hangar.
+The figure below illustrates the IDs of the maker that are attached to the pillars, where the lower ArUco marker is mounted at a height of 2m and the upper marker at 4m.
+
+\input{figures/FieldIDs.tikz}
+
+None of the hangers walls are aligned to the north or the east direction.
+To simlify the positioning system an additional marker with the ID 0 is placed at the back wall in the center of the field.
+This 0 marker can be used to attach the local world coordinate system to it.
+The orientation of the marker is shown in figure \ref{fig:marker_zero}
+\input{figures/marker0.tikz}
+
+The aruco marker are from the DICT_4X4_50 dictionary and have a size of 0.5m x 0.5m.
 
 \item This information enables positioning in the arena with a view of a single marker
 \end{itemize}
